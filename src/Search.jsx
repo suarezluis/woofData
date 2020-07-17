@@ -8,14 +8,12 @@ export default function Search() {
     axios
       .get(`https://api.thedogapi.com/v1/breeds/search?q=${breed}`)
       .then((response) => {
-        console.log(response.data);
         setBreedList(response.data);
       });
   };
 
   const search = (e) => {
     e.preventDefault();
-    console.log(e.currentTarget.value);
     get(e.currentTarget.value);
   };
 
